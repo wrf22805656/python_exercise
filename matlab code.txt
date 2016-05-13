@@ -1,0 +1,980 @@
+xx=importdata('KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY.finalR2.txt');
+yy=importdata('KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY.finalSNPid.txt');
+cov=zeros(15542,15542);
+ind=true(15542,15542);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=xx;
+cov=cov+eye(15542)+cov';
+data2.data=cov;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+S_XY_full_study1=importdata('fullXY.txt');
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_inputXY.txt');
+metaCCA_KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus__KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+[nrows,ncols]= size(metaCCA_KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1);
+filename = 'metaCCA_KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus__KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1);
+filename = 'metaCCAplus__KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus__KEGG_ADIPOCYTOKINE_SIGNALING_PATHWAY_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_ALPHA_LINOLENIC_ACID_METABOLISM.finalXY.txt >KEGG_ALPHA_LINOLENIC_ACID_METABOLISM_inputXY.txt
+
+#######################2##############################
+
+xx=importdata('KEGG_ALPHA_LINOLENIC_ACID_METABOLISM.finalR2.txt');
+yy=importdata('KEGG_ALPHA_LINOLENIC_ACID_METABOLISM.finalSNPid.txt');
+cov=zeros(1808,1808);
+ind=true(1808,1808);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(1808)+cov';
+data2.data=cov;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+%S_XY_full_study1=importdata('fullXY.txt');
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_ALPHA_LINOLENIC_ACID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_ALPHA_LINOLENIC_ACID_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus__KEGG_ALPHA_LINOLENIC_ACID_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+
+[nrows,ncols]= size(metaCCA_KEGG_ALPHA_LINOLENIC_ACID_result1);
+filename = 'metaCCA_KEGG_ALPHA_LINOLENIC_ACID__result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_ALPHA_LINOLENIC_ACID_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus__KEGG_ALPHA_LINOLENIC_ACID_result1);
+filename = 'metaCCAplus__KEGG_ALPHA_LINOLENIC_ACID_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus__KEGG_ALPHA_LINOLENIC_ACID_result1{row,:});
+endfclose(fid);
+
+
+
+
+#######################3##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_ARACHIDONIC_ACID_METABOLISM.finalXY.txt >KEGG_ARACHIDONIC_ACID_METABOLISM_inputXY.txt
+
+
+x=importdata('KEGG_ARACHIDONIC_ACID_METABOLISM.finalR2.txt');
+y=importdata('KEGG_ARACHIDONIC_ACID_METABOLISM.finalSNPid.txt');
+cov=zeros(6188,6188);
+ind=true(6188,6188);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(6188)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_ARACHIDONIC_ACID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_ARACHIDONIC_ACID_METABOLISM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_ARACHIDONIC_ACID_METABOLISM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_KEGG_ARACHIDONIC_ACID_METABOLISM_result1);
+filename = 'metaCCA_KEGG_ARACHIDONIC_ACID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_ARACHIDONIC_ACID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_ARACHIDONIC_ACID_METABOLISM_result1);
+filename = 'metaCCAplus_KEGG_ARACHIDONIC_ACID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_ARACHIDONIC_ACID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+#######################4##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS.finalXY.txt >KEGG_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_inputXY.txt
+
+
+x=importdata('KEGG_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS.finalR2.txt');
+y=importdata('KEGG_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS.finalSNPid.txt');
+cov=zeros(4896,4896);
+ind=true(4896,4896);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(4896)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_inputXY.txt');
+metaCCA__BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA__BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1);
+filename = 'metaCCA__BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA__BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1);
+filename = 'metaCCAplus_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_BIOSYNTHESIS_OF_UNSATURATED_FATTY_ACIDS_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+#######################5##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_ETHER_LIPID_METABOLISM.finalXY.txt >KEGG_ETHER_LIPID_METABOLISM_inputXY.txt
+
+
+x=importdata('KEGG_ETHER_LIPID_METABOLISM.finalR2.txt');
+y=importdata('KEGG_ETHER_LIPID_METABOLISM.finalSNPid.txt');
+cov=zeros(5232,5232);
+ind=true(5232,5232);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(5232)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_ETHER_LIPID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_ETHER_LIPID_METABOLISM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_ETHER_LIPID_METABOLISM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_KEGG_ETHER_LIPID_METABOLISM_result1);
+filename = 'metaCCA_KEGG_ETHER_LIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_ETHER_LIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_ETHER_LIPID_METABOLISM_result1);
+filename = 'metaCCAplus_KEGG_ETHER_LIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_ETHER_LIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################6##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_FATTY_ACID_METABOLISM.finalXY.txt >KEGG_FATTY_ACID_METABOLISM_inputXY.txt
+
+
+x=importdata('KEGG_FATTY_ACID_METABOLISM.finalR2.txt');
+y=importdata('KEGG_FATTY_ACID_METABOLISM.finalSNPid.txt');
+cov=zeros(3363,3363);
+ind=true(3363,3363);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(3363)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XY_full_study1=importdata('fullXY.txt');
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_FATTY_ACID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_FATTY_ACID_METABOLISM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_FATTY_ACID_METABOLISM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+
+SNP_ids=y;
+SNP_ids=cellstr(transpose(y));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+
+[nrows,ncols]= size(metaCCA_KEGG_FATTY_ACID_METABOLISM_result1);
+filename = 'metaCCA_KEGG_FATTY_ACID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_FATTY_ACID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_FATTY_ACID_METABOLISM_result1);
+filename = 'metaCCAplus_KEGG_FATTY_ACID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_FATTY_ACID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################7##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_GLYCEROLIPID_METABOLISM.finalXY.txt >KEGG_GLYCEROLIPID_METABOLISM_inputXY.txt
+
+
+x=importdata('KEGG_GLYCEROLIPID_METABOLISM.finalR2.txt');
+y=importdata('KEGG_GLYCEROLIPID_METABOLISM.finalSNPid.txt');
+cov=zeros(15814,15814);
+ind=true(15814,15814);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(15814)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KKEGG_GLYCEROLIPID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_GLYCEROLIPID_METABOLISM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_GLYCEROLIPID_METABOLISM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_KEGG_GLYCEROLIPID_METABOLISM_result1);
+filename = 'metaCCA_KEGG_GLYCEROLIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_GLYCEROLIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_GLYCEROLIPID_METABOLISM_result1);
+filename = 'metaCCAplus_KEGG_GLYCEROLIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_GLYCEROLIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################8##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_GLYCEROPHOSPHOLIPID_METABOLISM.finalXY.txt >KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_inputXY.txt
+
+
+xx=importdata('KEGG_GLYCEROPHOSPHOLIPID_METABOLISM.finalR2.txt');
+yy=importdata('KEGG_GLYCEROPHOSPHOLIPID_METABOLISM.finalSNPid.txt');
+cov1=zeros(13326,13326);
+ind1=true(13326,13326);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(13326)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+
+[nrows,ncols]= size(metaCCA_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1);
+filename = 'metaCCA_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1);
+filename = 'metaCCAplus_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_GLYCEROPHOSPHOLIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################9##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE.finalXY.txt >KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_inputXY.txt
+
+
+x=importdata('KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE.finalR2.txt');
+y=importdata('KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE.finalSNPid.txt');
+cov=zeros(8100,8100);
+ind=true(8100,8100);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(8100)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_inputXY.txt');
+metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1);
+filename = 'metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1);
+filename = 'metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_CHONDROITIN_SULFATE_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################10##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE.finalXY.txt >KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_inputXY.txt
+
+
+xx=importdata('KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE.finalR2.txt');
+yy=importdata('KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE.finalSNPid.txt');
+cov1=zeros(4040,4040);
+ind1=true(4040,4040);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(4040)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_inputXY.txt');
+metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1);
+filename = 'metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1);
+filename = 'metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_GLYCOSAMINOGLYCAN_BIOSYNTHESIS_KERATAN_SULFATE_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################11##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GANGLIO_SERIES.finalXY.txt >KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GANGLIO_SERIES_inputXY.txt
+
+
+xx=importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GANGLIO_SERIES.finalR2.txt');
+yy=importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GANGLIO_SERIES.finalSNPid.txt');
+cov1=zeros(4800,4800);
+ind1=true(4800,4800);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(4800)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+N1=46694;
+N=46694
+S_XY_full_study1=importdata('fullXY.txt');
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GANGLIO_SERIES_inputXY.txt');
+metaCCA_GANGLIO_SERIES_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_GANGLIO_SERIES_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+[nrows,ncols]= size(metaCCA_GANGLIO_SERIES_result1);
+filename = 'metaCCA_GANGLIO_SERIES_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_GANGLIO_SERIES_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_GANGLIO_SERIES_result1);
+filename = 'metaCCAplus_GANGLIO_SERIES_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_GANGLIO_SERIES_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+#######################12##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GLOBO_SERIES.finalXY.txt >KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GLOBO_SERIES_inputXY.txt
+
+
+xx=importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GLOBO_SERIES.finalR2.txt');
+yy=importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GLOBO_SERIES.finalSNPid.txt');
+cov1=zeros(3235,3235);
+ind1=true(3235,3235);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(3235)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+N=46694
+S_XY_full_study1=importdata('fullXY.txt');
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_GLOBO_SERIES_inputXY.txt');
+metaCCA_BIOSYNTHESIS_GLOBO_SERIES_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_BIOSYNTHESIS_GLOBO_SERIES_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+[nrows,ncols]= size(metaCCA_BIOSYNTHESIS_GLOBO_SERIES_result1);
+filename = 'metaCCA_BIOSYNTHESIS_GLOBO_SERIES_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_BIOSYNTHESIS_GLOBO_SERIES_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_BIOSYNTHESIS_GLOBO_SERIES_result1);
+filename = 'metaCCAplus_BIOSYNTHESIS_GLOBO_SERIES_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_BIOSYNTHESIS_GLOBO_SERIES_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+#######################13##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES.finalXY.txt >KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_inputXY.txt
+
+
+xx=importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES.finalR2.txt');
+yy=importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES.finalSNPid.txt');
+cov1=zeros(3924,3924);
+ind1=true(3924,3924);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(3924)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_GLYCOSPHINGOLIPID_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_inputXY.txt');
+metaCCA_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1);
+filename = 'metaCCA_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1);
+filename = 'metaCCAplus_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_BIOSYNTHESIS_LACTO_AND_NEOLACTO_SERIES_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+#######################14##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_LINOLEIC_ACID_METABOLISM.finalXY.txt >KEGG_LINOLEIC_ACID_METABOLISM_inputXY.txt
+
+
+xx=importdata('KEGG_LINOLEIC_ACID_METABOLISM.finalR2.txt');
+yy=importdata('KEGG_LINOLEIC_ACID_METABOLISM.finalSNPid.txt');
+cov1=zeros(2529,2529);
+ind1=true(2529,2529);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(2529)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+N=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_LINOLEIC_ACID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_LINOLEIC_ACID_METABOLISM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_LINOLEIC_ACID_METABOLISM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+
+[nrows,ncols]= size(metaCCA_KEGG_LINOLEIC_ACID_METABOLISM_result1);
+filename = 'metaCCA_KEGG_LINOLEIC_ACID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_LINOLEIC_ACID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_LINOLEIC_ACID_METABOLISM_result1);
+filename = 'metaCCAplus_KEGG_LINOLEIC_ACID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_LINOLEIC_ACID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+#######################15##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_N_GLYCAN_BIOSYNTHESIS.finalXY.txt >KEGG_N_GLYCAN_BIOSYNTHESIS_inputXY.txt
+
+
+xx=importdata('KEGG_N_GLYCAN_BIOSYNTHESIS.finalR2.txt');
+yy=importdata('KEGG_N_GLYCAN_BIOSYNTHESIS.finalSNPid.txt');
+cov1=zeros(8393,8393);
+ind1=true(8393,8393);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(8393)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+N=46694
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_N_GLYCAN_BIOSYNTHESIS_inputXY.txt');
+metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+[nrows,ncols]= size(metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1);
+filename = 'metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1);
+filename = 'metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+#######################15##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_N_GLYCAN_BIOSYNTHESIS.finalXY.txt >KEGG_N_GLYCAN_BIOSYNTHESIS_inputXY.txt
+
+
+xx=importdata('KEGG_N_GLYCAN_BIOSYNTHESIS.finalR2.txt');
+yy=importdata('KEGG_N_GLYCAN_BIOSYNTHESIS.finalSNPid.txt');
+cov1=zeros(8393,8393);
+ind1=true(8393,8393);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(8393)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+N=46694;
+S_XY_full_study1=importdata('fullXY.txt');
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_N_GLYCAN_BIOSYNTHESIS_inputXY.txt');
+metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1);
+filename = 'metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_N_GLYCAN_BIOSYNTHESIS_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1);
+filename = 'metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_N_GLYCAN_BIOSYNTHESIS_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+#######################16##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_OTHER_GLYCAN_DEGRADATION.finalXY.txt >KEGG_OTHER_GLYCAN_DEGRADATION_inputXY.txt
+
+
+xx=importdata('KEGG_OTHER_GLYCAN_DEGRADATION.finalR2.txt');
+yy=importdata('KEGG_OTHER_GLYCAN_DEGRADATION.finalSNPid.txt');
+cov1=zeros(4141,4141);
+ind1=true(4141,4141);
+ind_tril=tril(ind1,-1);
+cov(ind_tril)=xx;
+cov2=cov1+eye(4141)+cov1';
+data2.data=cov2;
+data2.textdata=yy;
+data2.rowheaders=yy;
+
+
+N1=46694;
+
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_OTHER_GLYCAN_DEGRADATION_inputXY.txt');
+metaCCA_KEGG_OTHER_GLYCAN_DEGRADATION_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_OTHER_GLYCAN_DEGRADATION_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+SNP_ids=yy;
+SNP_ids=cellstr(transpose(yy));
+metaCCA_result3=metaCCA(1, S_XY_study1, 0, S_YY_study1,N1,2, SNP_ids,S_XX_study1);
+
+[nrows,ncols]= size(metaCCA_KEGG_OTHER_GLYCAN_DEGRADATION_result1);
+filename = 'metaCCA_KEGG_OTHER_GLYCAN_DEGRADATION_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_OTHER_GLYCAN_DEGRADATION_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_OTHER_GLYCAN_DEGRADATION_result1);
+filename = 'metaCCAplus_KEGG_OTHER_GLYCAN_DEGRADATION_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_OTHER_GLYCAN_DEGRADATION_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+
+
+#######################17##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_RENIN_ANGIOTENSIN_SYSTEM.finalXY.txt >KEGG_RENIN_ANGIOTENSIN_SYSTEM_inputXY.txt
+
+
+x=importdata('KEGG_RENIN_ANGIOTENSIN_SYSTEM.finalR2.txt');
+y=importdata('KEGG_RENIN_ANGIOTENSIN_SYSTEM.finalSNPid.txt');
+cov=zeros(4306,4306);
+ind=true(4306,4306);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(4306)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_RENIN_ANGIOTENSIN_SYSTEM_inputXY.txt');
+metaCCA_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1);
+filename = 'metaCCA_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1);
+filename = 'metaCCAplus_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_RENIN_ANGIOTENSIN_SYSTEM_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+#######################18##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_SPHINGOLIPID_METABOLISM.finalXY.txt >KEGG_SPHINGOLIPID_METABOLISM_inputXY.txt
+
+
+x=importdata('KEGG_SPHINGOLIPID_METABOLISM.finalR2.txt');
+y=importdata('KEGG_SPHINGOLIPID_METABOLISM.finalSNPid.txt');
+cov=zeros(6831,6831);
+ind=true(6831,6831);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(6831)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_SPHINGOLIPID_METABOLISM_inputXY.txt');
+metaCCA_KEGG_SPHINGOLIPID_METABOLISM_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_SPHINGOLIPID_METABOLISM_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_KEGG_SPHINGOLIPID_METABOLISM_result1);
+filename = 'metaCCA_KEGG_SPHINGOLIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_SPHINGOLIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_SPHINGOLIPID_METABOLISM_result1);
+filename = 'metaCCAplus_KEGG_SPHINGOLIPID_METABOLISM_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_SPHINGOLIPID_METABOLISM_result1{row,:});
+endfclose(fid);
+
+
+
+
+
+
+
+#######################19##############################
+awk '{print $2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18}' KEGG_STEROID_HORMONE_BIOSYNTHESIS.finalXY.txt >KEGG_STEROID_HORMONE_BIOSYNTHESIS_inputXY.txt
+
+
+x=importdata('KEGG_STEROID_HORMONE_BIOSYNTHESIS.finalR2.txt');
+y=importdata('KEGG_STEROID_HORMONE_BIOSYNTHESIS.finalSNPid.txt');
+cov=zeros(5640,5640);
+ind=true(5640,5640);
+ind_tril=tril(ind,-1);
+cov(ind_tril)=x;
+cov=cov+eye(5640)+cov';
+data2.data=cov;
+data2.textdata=y;
+data2.rowheaders=y;
+
+
+N1=46694;
+S_XX_study1=data2;
+S_YY_study1 = estimate_Syy(S_XY_full_study1);
+S_XY_study1= importdata('KEGG_STEROID_HORMONE_BIOSYNTHESIS_inputXY.txt');
+metaCCA_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1 = metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+metaCCAplus_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1= metaCCA(1,S_XY_study1,0, S_YY_study1,N1);
+
+[nrows,ncols]= size(metaCCA_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1);
+filename = 'metaCCA_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCA_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1{row,:});
+endfclose(fid);
+
+[nrows,ncols]= size(metaCCAplus_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1);
+filename = 'metaCCAplus_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1.txt';
+fid = fopen(filename, 'w');
+for row=1:nrows    
+fprintf(fid, '%s %s %s\n', metaCCAplus_KEGG_STEROID_HORMONE_BIOSYNTHESIS_result1{row,:});
+endfclose(fid);
+
+
+
+
