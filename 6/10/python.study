@@ -28,5 +28,14 @@ for example :  echo $HOME
 9. In lnux shell environment, you cannot define a variable like below:
   # for example:  no  a = 1. you can only write in this way "a=1"
 
-10. 
+10.   a='ruifeng wang'
+      echo $a
+
+11.  follow the above, if we have a variable like a='ruifeng wang'
+    b=`echo $a`
+    echo $b
+    we can see that  b is ruifeng wang
+    就相当于 我把echo $a得到的信息传递给b，记住  这里用的是反引号
+
+12.   
 
