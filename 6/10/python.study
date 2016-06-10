@@ -1,0 +1,32 @@
+1.	 ?.txt 有一位不知道是啥，*.txt  有很多位，任意位信息
+2.	  echo “111111” >> 3.txt 追加1111 到3.txt文件中
+3.	  2>   :
+ls lisadsaasdasd  有错误提示的话 你可可以让错误提示不出现  放在error.log里面
+ls lissasasdasd 2> error.log
+
+4.	用linux 发邮件 
+mail –s “nimeia”  wrf22805656@gmail.com <3.txt
+
+5.	 使用查询
+ls –help
+6.	 查询命令干干嘛的 
+whatis ls
+7.   let's study some fun variable information 
+we have some inserted system variables:
+for example :  echo $HOME
+               echo $HOSTNAME
+    # if you type "env", you will find all the variables under your environment, both systemt variables and your own variables
+    # if you want to get those variables that created by yourself. you can use the sytanx "set"
+    # "env" is less power than "set"
+    
+    
+8.  export a=1
+就是想声明一下 让a=1这个变量是全局变量  你可以用echo 去检测
+    echo $a
+    you will see 1
+
+9. In lnux shell environment, you cannot define a variable like below:
+  # for example:  no  a = 1. you can only write in this way "a=1"
+
+10. 
+
