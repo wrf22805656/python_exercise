@@ -37,5 +37,9 @@ for example :  echo $HOME
     we can see that  b is ruifeng wang
     就相当于 我把echo $a得到的信息传递给b，记住  这里用的是反引号
 
-12.   
+12. 如果你想取消一个全局变量 那么用unset a
+ 这样你就在bash下 echo a 发现没有内容
+ 
+
+13. 
 
