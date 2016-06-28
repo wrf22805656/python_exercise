@@ -1,0 +1,1 @@
+rename .csv.gz .csv *.csv.gz
