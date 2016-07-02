@@ -1,0 +1,33 @@
+# chapter 3 
+print s4.substitute(d)
+
+# 3.3
+print '%s plus %s equal %s' % (1,2,3)
+#print '%s plus %s equals %s' 1, 1, 2 # lack parentheses
+from math import pi
+
+
+
+# 3-1
+print 'With a moo-moo here. and a moo-moo there'.find('moo')
+title = "Monty Python's Flying Circus"
+print title.find('Monty')
+subject = '$$$Get rich now!!! $$$'
+print subject.find('$$$')
+
+
+#3.4.2
+seq = ['1','2','3','4','5']
+sep = 'nimeia'
+print sep.join(seq)
+dirs = '', 'usr', 'bin', 'env'
+print '/'.join(dirs)
+
+# return some small letters
+print 'THROndheim hammer DANCE'.lower()
+
+
+if 'grace' in ['grace','czhong','nimeia']: print 'found it'
+
+print 'czhong is nvshen'.replace('nvshen', 'nvdiaosi')
+"chapter3.py" 55L, 1190C                                                    55,1          Bot
