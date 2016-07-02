@@ -1,0 +1,33 @@
+#chapter4
+x = {}
+y = x
+x['key'] = 'value'
+print y
+x = {}
+print y
+
+# example 2
+x = {}
+y = x
+x['key'] = 'value'
+print y
+print x.clear()
+print y
+
+z = {'username' : 'admin', 'machines': ['foo', 'bar', 'baz']}
+zz = z.copy()
+zz['username'] = 'mlh'
+zz['machines'].remove('bar')
+print z
+print zz
+
+from copy import deepcopy
+d = {}
+d['names'] = ['czhong', 'wang']
+c = d.copy()
+dc = deepcopy(d)
+d['names'].append('Clive')
+print c
+print d
+print dc
+"chapter4.py" 62L, 1146C                                                    62,1          Bot
