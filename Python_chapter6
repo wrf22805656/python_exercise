@@ -1,0 +1,31 @@
+    return result
+
+print factorial(5)
+
+def factorial(n):
+    if n ==1:
+        return 1
+    else:
+        return n*factorial(n-1)
+print factorial(5)
+
+###
+def search(sequence, number, lower, upper):
+
+    if lower == upper:
+        assert number == sequence[upper]
+        return upper
+    else:
+        middle = (lower + upper) // 2
+        if number> sequence[middle]:
+            return search(sequence, number, middle+1, upper)
+        else:
+            return search(sequence, number, lower, middle)
+
+# sequence = [34,67, 100,101,123,120]
+# sequence.sort()
+
+# print search(sequence, 100)
+
+print map(str, range(10))
+"chapter6.py" 135L, 2385C                                     133,1         Bot
