@@ -1,0 +1,31 @@
+print foo.greet()
+print ruifeng.greet()
+
+print foo.name
+print ruifeng.name
+print ruifeng.greet()
+
+
+################# second example ##################
+__metaclass__ = type
+
+class Class:
+
+    def method(self):
+
+        print 'I have a self!'
+
+    def function():
+        print 'I dont have a self!'
+
+nimeia = Class()
+nimeia.method()
+
+
+############3 class Bird #########
+__metaclass__ = type
+
+class Bird:
+    song = 'Squaawk!'
+    def sing(self):
+                                                              44,1          63%
