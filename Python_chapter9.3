@@ -1,0 +1,31 @@
+class Fibs:
+    def __init__(self):
+        self.a = 0
+        self.b = 1
+    def next(self):
+        self.a, self.b =self.b, self.a + self.b
+    def __iter__(self):
+        return self
+
+# #    get orders from interator
+class TestIterator:
+    value = 0
+    def next(self):
+        self.value +=1
+        if self.value >10:
+            raise StopIteration
+        return self.value
+
+    def __iter__(self):
+        return self
+
+ti = TestIterator()
+print list(ti)
+
+#
+nested = [[1,2],[3,4],[5]]
+def flatten(nested):
+    for sublist in nested:
+        for element in sublist:
+            yield element
+"chapter9.3.py" 86L, 1658C                                                       86,6-13       Bot
