@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+__metaclass__ = type
+
+class Bird:
+    def __init__(self):
+        self.hungry = True
+    def eat(self):
+        if self.hungry:
+            self.hungry = False
+            print 'I should eat some food now'
+        else:
+            print 'I am good, not hungry'
+
+class Songbird(Bird):
+    def __init__(self):
+        super(Songbird, self).__init__()
+        self.sound = 'ni ma high'
+    def sing(self):
+        print self.sound
+
+a = Songbird()
+a.sing()
+a.eat()
+a.eat()
+
