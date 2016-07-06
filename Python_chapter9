@@ -1,0 +1,24 @@
+#### practise one more time
+
+class Birds:
+   def __init__(self):
+        self.hungryy = True
+   def eatornot(self):
+        if self.hungryy:
+             print 'I wanna eat something'
+             self.hungryy = False
+        else:
+             print 'I am ok now'
+
+class SongBirds(Birds):
+    def __init__(self):
+        Birds.__init__(self)
+        self.sound = ' XIN TAI RUAN'
+    def singg(self):
+        print self.sound
+
+a = SongBirds()
+a.singg()
+a.eatornot()
+a.eatornot()
+                                                              59,5          Bot
