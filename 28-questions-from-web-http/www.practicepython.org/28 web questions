@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+
+# name = raw_input("please enter your name: ")
+# age = int(raw_input(" please enter your age as well: "))
+# dif = 100 - age
+# print " you will reach to 100 years old after %d years" % dif
+
+# name = raw_input("please enter your name: ")
+# age = int(raw_input(" please enter your age as well: "))
+# dif = (2016 - 28) + 100
+# print "%s will be 100 years old in the year %d" % (name,dif)
+
+
+#import datetime
+#name = raw_input("please enter your name: ")
+#age = int(raw_input(" please enter your age as well: "))
+
+#today = datetime.date.today()
+#year_100 = int(today.year)
+#year_output = st(year_100 + 100 -age)
+
+
+number = int(raw_input( "please enter an integer number :"))
+if number == 1:
+    print " 1 is not a even or odd"
+if number > 0 and number % 2 == 0:
+    print "this number is a even"
+if number > 0 and number % 2 == 1:
+        print "this number is an odd"
+if number <= 0:
+    print "you entered a negative number"
+
+
+## problem 3 ##
+# a = [1,1,2,3,5,8,13,21,34,55,89]
+# b = []
+# for i in a:
+#    if i < 5:
+#        b.append(i)
+# print b
+
+a = [1,2,3,4,5,6,7,8,9,10,11]
+num = int(raw_input("choose a number: "))
+new_list = []
+
+for i in a:
+     if i < num:
+        new_list.append(i)
+
+print new_list
+                                                        1,1           Top
