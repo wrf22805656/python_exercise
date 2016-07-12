@@ -1,0 +1,16 @@
+###check primality functions:
+
+def get_integer():
+    return int(input("please enter a integer number : "))
+
+n1 = get_integer()
+
+for i in range(2,n1):
+    if n1 % i != 0:
+        if i == (n1-1):
+            print ("It is a prime")
+        else:
+            continue
+    else:
+        print ("It is not a prime")
+        break
