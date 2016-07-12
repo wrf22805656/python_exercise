@@ -1,0 +1,9 @@
+###
+# you can split or tear apart strings based on a given set of characters.
+
+teststring = "this is a test"
+
+def reverseword(w):
+    return ' '.join(w.split()[::-1])
+
+print (reverseword(teststring))
