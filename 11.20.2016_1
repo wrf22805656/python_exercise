@@ -1,0 +1,19 @@
+import math
+signal_power = 9
+noise_power = 10
+ratio = signal_power % noise_power
+decibels = 10 * math.log10(ratio)
+print(decibels)
+
+
+def area(radius):
+    return math.pi * radius**2
+
+def absolute_value(A):
+    if A < 0:
+        return -A
+    else:
+        return A
+
+print(absolute_value(-5))
+
