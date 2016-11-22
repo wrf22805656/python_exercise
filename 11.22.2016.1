@@ -1,0 +1,89 @@
+def distance(x1, y1, x2, y2):
+    dx = x2 - x1
+    dy = y2 - y1
+    dsquared = dx**2 + dy**2
+    print("dsquared is:",dsquared)
+
+distance(1,2,3,4)
+
+def countdown(n):
+    while n > 0:
+        print n
+        n = n - 1
+    print 'Blastoff!'
+
+countdown(10)
+
+def sequence(n):
+    while n !=1:
+        print n,
+        if n%2 == 0:
+            n = n/2
+        else:
+            n = n*3+1
+
+# a string is a sequence of characters. You can access the characters one at a
+# time with the bracket operator.
+
+fruit = 'banana'
+letter = fruit[1]
+print (fruit)
+print (letter)
+
+# the second statement selects character number 1 from fruit and assigns it to letter.
+length = len(fruit)
+print (length)
+print (fruit[5])
+
+prefixes = 'JKLMNOPQ'
+suffix = 'ack'
+for ZZ in prefixes:
+    print ZZ + suffix
+
+sss = 'Monty Python'
+print sss[0]
+print sss[:]
+
+greating = 'Hello, World'
+newgreating = 'J' + greating[1:]
+print (newgreating)
+
+def findd(word, letter):
+    index = 0
+    while index < len(word):
+        if word[index] == letter:
+            return index
+        index = index +1
+    return -1
+
+# the following program counts the number of times the letter a  appears in a string:
+word = 'banana'
+count = 0
+for letter in word:
+    if letter == 'a':
+        count = count +1
+
+print count
+
+word = 'banana'
+new_word = word.upper()
+print new_word
+
+if word == 'banana':
+    print 'All right, bananas.'
+
+cheeses = ['Cheddar', 'Edam', 'Gouda']
+numbers = [17, 123]
+empty = []
+print (cheeses, numbers, empty)
+print cheeses[0]
+print numbers[0]
+
+# unlike strings, lists are mutable. When the bracket operator appears on the left side of an assignment,
+# it identifies the element of the list that will be assigned.
+
+numbers = [17, 123]
+numbers[1] = 5
+print (numbers)
+
+
