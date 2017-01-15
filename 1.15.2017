@@ -1,0 +1,53 @@
+
+
+def ask_ok(prompt, retries=4, complaint='yes or no please!'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no','nop','nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise I0Error('refusenik user')
+        print (complaint)
+
+list(range(3,6))
+print (list(range(3,6)))
+args = [3,6]
+print (list(range(*args)))
+
+a = [1,2,3,4,5,6,7,8,8,8,8,8,7,7,7,6]
+print (a.count(1),a.count(7))
+a.insert(2,-1)
+a.append(333)
+print (a)
+
+stack = [3,4,5]
+stack.append(6)
+stack.append(7)
+print (stack)
+print (stack.pop())
+
+
+vec = [2,4,6]
+print ([3*x for x in vec])
+
+mat = [[1,2,3],[4,5,6],[7,8,9]]
+
+for i in [0,1,2]:
+    for row in mat:
+        print(row[i])
+        print()
+
+basket = "apple"
+print (basket)
+
+tel = {'jeck':4098, 'sape':4139}
+tel['guido'] = 4127
+print (tel)
+print (tel['jeck'])
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print (k,v)
