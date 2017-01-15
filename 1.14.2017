@@ -1,0 +1,46 @@
+the_world_is_flat = 1
+if the_world_is_flat:
+    print("be careful not to fall off")
+
+a, b = 0, 1
+while b <10:
+    print(b)
+    a,b = b, a+b
+
+name = 'Ruifeng Wang'
+age = 100
+
+print ("The name of this student is %s" %name)
+print ("He is %d years old" %age)
+
+
+a = ['cat', 'window', 'defenestrate']
+for x in a:
+    print (x, len(x))
+
+for x in a[:]:
+    if len(x) > 6:
+        a.insert(0,x)
+        print(a)
+
+for i in range(5):
+    print(i)
+
+for n in range(2,10):
+    for x in range(2,n):
+        if n % x == 0:
+            print (n, 'equals', x, '*', n//x)
+            break
+        else:
+            print (n, "is not prime number")
+print (list(range(2,10)))
+
+
+
+def fib(n):
+    a,b = 0,1
+    while a < n:
+        print (a)
+        a, b = b, a+b
+
+print (fib(3000))
