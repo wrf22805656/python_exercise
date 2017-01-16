@@ -1,0 +1,18 @@
+dict = {'ob1':'computer', 'ob2':'mouse','ob3':'printer'}
+# every element is a pair. it contains two parts, key and value.
+# key should be integer or string but value can be anything
+
+print dict.get('ob1')
+print dict.has_key('ob1')
+print dict.keys()
+print dict.values()
+print dict.items()
+
+dict2 = {'ob4':'czhong', 'ob5':'ruifeng wang'}
+
+N = {'ob1':10,'ob2':20}
+MM = {'ob1':10,'ob2':20}
+print N.__cmp__(MM)
+
+dict3 = dict2.copy()
+print dict3
