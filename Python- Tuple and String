@@ -1,0 +1,27 @@
+
+
+# I want to create a tuple
+tuple_one = ('a','b','c','d','f')
+
+# string
+
+stringone = "Hello My girlfriend"
+print stringone[1:6]
+# it includes 'in' and 'not in'
+# 'he' in stringone
+# 'she' not in stringone
+
+substring = "My"
+print stringone.find(substring)
+print stringone.lower()
+print stringone.capitalize()
+print stringone.upper()
+print len(stringone)
+
+float(stringone)
+int(stringone)
+int(stringone,base)
+long(stringone)
+long(stringone,base)
+
+
