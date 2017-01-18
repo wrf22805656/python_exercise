@@ -1,0 +1,10 @@
+class Person:
+    def __init__(self,name, age):
+        self.name = name
+        self.age = age
+    def sayHi(self):
+        print "hello, my name is", self.name
+        print "I am", self.age
+
+p = Person('Ruifeng Wang',80)
+print p.sayHi()
