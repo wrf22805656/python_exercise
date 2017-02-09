@@ -1,0 +1,100 @@
+#! /user/bin/env python
+
+iterm1 = 10
+iterm2 = 20
+iterm3 = 30
+
+total = iterm1 + \
+        iterm2 + \
+        iterm3
+
+print total
+
+# data1 = raw_input("\n\n Type what ever you want:  \n\n")
+# print data1
+
+
+
+# now, we are talking about the list
+list = ['runoob',789,2.23,'Ruifeng Wang', 70.2]
+tinylist = [123,456, 'Chengxue Zhong']
+
+print list
+print list[0]
+print list[1:3]
+print list[2:]
+print tinylist*2
+print tinylist + list
+
+
+
+# identify the prime number
+i=2
+while (i<100):
+        j=2
+        while (j< i):
+                if not (i%j):
+                        break
+                j=j+1
+        else:
+                print i
+        i = i+1
+
+
+import time
+ticks = time.time()
+print 'current time is :', ticks
+
+localtime = time.localtime(time.time())
+print "local time is:",localtime
+
+localtime2 = time.asctime(localtime)
+print localtime2
+
+
+
+
+
+########################################################
+# discuss the __init__
+
+name = "whole global name"
+
+class employees:
+        Empcount = 0
+        totalsalary = 0
+
+        def __init__(self, name, salary):
+                self.name = name
+                self.salary = salary
+                employees.Empcount += 1
+
+        def displaycount(self):
+                print "Total Employee %d" % employees.Empcount
+
+        def displayemployees(self):
+                print "Name: ", self.name, ",Salary: ", self.salary
+
+emp1 = employees("Ruifeng Wang", 1000000)
+emp2 = employees("Chengxue Zhong", 2000000)
+
+print employees.displaycount(emp1)
+print employees.displayemployees(emp2)
+
+
+print emp1.displayemployees()
+print emp2.displayemployees()
+
+
+
+print "employees.__doc__:", employees.__doc__
+print "employees.__dict__:", employees.__dict__
+print "employees.__name__:", employees.__name__
+print "employees.__module__:", employees.__module__
+
+
+
+
+
+
+
