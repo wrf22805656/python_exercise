@@ -1,0 +1,40 @@
+#! /user/bin/env python
+
+list = ['abc','def','high']
+
+for i in list:
+        print i
+
+for i in enumerate(list):
+        print i
+
+
+for index,text in enumerate(list):
+        print index
+        print text
+
+i = 0
+seq = ['one','two','three']
+
+for element in seq:
+        print i, seq[i]
+        i += 1
+for j,text in enumerate(seq):
+        print j, seq[j]
+
+
+d = {'name1':'pythontab', 'name2':'_', 'name3':'come'}
+for key in d:
+        print (key, d[key])
+        print key
+        print d['name1']
+
+
+
+abc = {'name1':'czhong','name2':'ruifeng wang','name3':'we love each others'}
+
+for key, value in abc.items():
+        print (key, value)
+
+s = 'string'
+l = list(s)
