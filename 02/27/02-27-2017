@@ -1,0 +1,187 @@
+# for i in range(2):
+#     print i
+# for i in range(4,6):
+#     print i
+#
+values = [1,2,3,1]
+nums = set(values)
+print nums
+
+def checkit(num):
+    if num in nums:
+        return True
+    else:
+        return False
+
+for i in filter(checkit,values):
+    print i
+
+
+def f(x):
+    return x != 'a'
+
+a = "abdsdasdasda"
+
+print filter(f,"dasda")
+
+
+def cube(x):
+    return x*x*x
+
+print map(cube,range(10))
+
+
+values = [2,3,2,4]
+def my_transformation(num):
+    return num**2
+for i in map(my_transformation,values):
+    print i
+
+
+
+class Person:
+
+    def __init__(self,name):
+        self.name = name
+
+    def sayHi(self):
+        print 'Good morning, my name is', self.name
+
+    def __del__(self):
+        print '%s says bye, guys' % self.name
+
+
+
+czhong = Person('czhong')
+czhong.sayHi()
+
+class Employee:
+
+    empCount = 0
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        Employee.empCount += 1
+
+    def displayCount(self):
+        print 'Total Employee %d' %Employee.empCount
+
+    def displayEmployee(self):
+        print 'Name :', self.name, ", Salary : ", self.salary
+
+czhong = Employee("czhong",10000)
+czhong.displayCount()
+czhong.displayEmployee()
+
+
+import pickle
+class account:
+
+    def __init__(self, id, balance):
+        self.id = id
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        self.balance -= amount
+
+myac = account('czhong', 1000)
+myac.deposit(800)
+myac.withdraw(1800)
+
+print myac.balance
+
+
+import math
+print math.floor(5.5)
+
+
+class PERSON:
+
+    def __init__(self,id):
+        self.id = id
+
+obama = PERSON(100)
+obama.__dict__['age'] = 49
+
+print obama.age + len(obama.__dict__)
+
+
+x = 'foo'
+y = 2
+print len(x) + y
+
+
+import re
+
+sum = 0
+pattern = 'back'
+
+
+
+foo = {}
+print type(foo)
+
+
+country_counter = {}
+
+def addone(country):
+    if country in country_counter:
+        country_counter[country] += 1
+    else:
+        country_counter[country] = 1
+
+addone('China')
+addone('Japan')
+
+print len(country_counter)
+
+
+import string
+s = string.ascii_lowercase
+e = enumerate(s)
+
+print s
+print list(e)
+
+def read_line(line):
+
+    sample = {}
+
+    n = len(line)
+
+    for i in range(n):
+        if line[i] != '0':
+            sample[i] = int(line[i])
+
+    return sample
+
+
+print read_line('10000234567890000'
+
+
+def xread_line(line2):
+    return ((idx, int(val)) for idx, val in enumerate(line2) if val != '0')
+
+
+print list(xread_line('01020221202'))
+
+
+class solution:
+
+    def twosum(self, num, target):
+        dict = {}
+
+        for i in xrange(len(num)):
+            x = num[i]
+            if target - x in dict:
+                return (dict[target-x]+1, i+1)
+            dict[x] = i
+
+a = solution()
+print a.twosum([1,2,3,4,5,6,7,8,9,10],10)
+
+
