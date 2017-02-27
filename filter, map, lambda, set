@@ -1,0 +1,43 @@
+# for i in range(2):
+#     print i
+# for i in range(4,6):
+#     print i
+#
+values = [1,2,3,1]
+nums = set(values)
+print nums
+
+def checkit(num):
+    if num in nums:
+        return True
+    else:
+        return False
+
+for i in filter(checkit,values):
+    print i
+
+
+def f(x):
+    return x != 'a'
+
+a = "abdsdasdasda"
+
+print filter(f,"dasda")
+
+
+def cube(x):
+    return x*x*x
+
+print map(cube,range(10))
+
+
+values = [2,3,2,4]
+def my_transformation(num):
+    return num**2
+for i in map(my_transformation,values):
+    print i
+
+
+import pickle
+class account:
+    def __init__(self, id, balance):
