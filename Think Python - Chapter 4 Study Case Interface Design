@@ -1,0 +1,82 @@
+# Case Study : Interface Design
+
+#! /user/bin/env python
+
+import swampy
+
+# 4.1 TurtleWorld
+
+from swampy.TurtleWorld import  *
+
+world = TurtleWorld()
+bob = Turtle()
+
+
+fd(bob, 100)
+lt(bob)
+fd(bob, 100)
+
+print bob
+
+wait_for_user()
+
+# 4.2 Simple repetition
+
+from swampy.TurtleWorld import  *
+world = TurtleWorld()
+bob = Turtle()
+
+for i in range(4):
+    fd(bob,100)
+    lt(bob)
+
+wait_for_user()
+
+
+# 4.3 Exercises
+# question one
+from swampy.TurtleWorld import *
+world = TurtleWorld()
+turtle = Turtle()
+
+def square(t):
+    for i in range(4):
+        fd(t, 200)
+        rt(t)
+
+square(turtle)
+
+# question two
+# add another parameter, named length to square, Modify the body
+# so length of the sides is length, and then modify the function call to provide a second argument
+# run the program again. Test your program with a range of values for length.
+
+
+from swampy.TurtleWorld import *
+world = TurtleWorld()
+turtle = Turtle()
+length = 150
+
+def square(t, length):
+    for i in range(4):
+        fd(t, length)
+        rt(t)
+
+square(turtle,length)
+wait_for_user()
+
+# 4.5 Generalization
+# the next step is to add a length parameter to square. Here is a solution:
+
+from swampy.TurtleWorld import *
+world = TurtleWorld()
+turtle = Turtle()
+length = 70
+
+def polygon(t,n, length):
+    angle = 360.0/n
+    for i in range(n):
+        fd(t, length)
+        lt(t, angle)
+
+polygon(turtle,12, length)
