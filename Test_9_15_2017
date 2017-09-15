@@ -1,0 +1,154 @@
+# task class
+
+
+def scope_test():
+    def do_local():
+        spam = "local spam"
+
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nolocal spam"
+
+    def do_global():
+        global spam
+        spam = "global spam"
+
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment: ", spam)
+    do_nonlocal()
+    print("After nonlocal assignment:" , spam)
+    do_global()
+    print("After global assignment: ", spam)
+
+scope_test()
+print ("In global scope:", spam)
+
+
+## warm-up trainning ##
+
+## task 1
+
+database = [['Ruifeng Wang', "888"], ['Chengxue Zhong', 666], ["Ruizhong Zhang",444]]
+username = input("Please enter your full name:\n")
+pin = int(input("Please enter your 3 digits pin number:\n "))
+
+if [username, pin] in database:
+    print ("access granted")
+    print ("what ever")
+else:
+    print ("He or She is not here")
+
+
+## task 2
+
+what_to_say = ("Hello, %s. %s enough for you all? ")
+values = ('Urumqi', 'Hot')
+print (what_to_say % values)
+
+print ("Hello, %s. %s enough for you all?" % ('World','Hot'))
+
+whats_the_score = ("Pi with three decimals: %.3f")
+from math import pi
+print (whats_the_score % pi)
+
+
+## task 3 dictionary
+
+names = ['ruizhong zhang', 'ruifeng wang', 'chengxue zhong', 'ying shi']
+numbers = [5046131111, 5046132222, 5046133333,5046134444]
+
+print (numbers[names.index("ruizhong zhang")])
+
+this is a shallow copy
+x = {'username':'admin' , 'machines' : ['foo', 'bar', 'baz']}
+y = x.copy()
+y['username'] = 'ruifeng'
+y['machines'].remove('foo')
+
+print (x,y)
+
+# this is a deep copy
+
+from copy import deepcopy
+d = {}
+d['names'] = ['Ruifeng Wang', 'Ruizhong Zhang']
+c = d.copy()
+dc = deepcopy(d)
+d['names'].append("Chengxue Zhong")
+
+print (dc, c, d)
+
+
+## Task 4, condition, loop and other syntax
+print ('age : 42')
+print ("age :", 42)
+print ("age" + ',' , 42)
+
+words = ['this','is','an','ex','parrot']
+for word in words:
+    print (word)
+
+numbers = [0,1,2,3,4,5,6,7,8,9]
+for number in range(1,50,2):
+    print (number)
+
+d = {'x':1, 'y':2}
+for key in d:
+    print (key, 'corresponding to', d[key])
+
+
+def hello(name):
+    return 'Hello ' + name + '!'
+print (hello('Ruifeng Wang'))
+
+
+# Task class
+__metaclass__=type
+
+class Person:
+
+    def setName(self, name):
+        self.name = name
+
+    def getName(self):
+        return self.name
+
+    def greet(self):
+        print ("hello, world~! I am %s." % self.name)
+
+ruifengwang = Person()
+
+ruifengwang.setName('Ruifeng Wang')
+ruifengwang.greet()
+print (ruifengwang.name)
+
+# Task
+
+class Bird:
+
+    def __init__(self):
+        self.hungry = True
+
+    def eat(self):
+        if self.hungry:
+            print ('Aaaah')
+            self.hungry = False
+        else:
+            print ("No, I am fine")
+
+
+class SongBird(Bird):
+
+    def __init__(self):
+        super(SongBird, self).__init__()
+        self.sound = 'Squawk'
+
+    def sing(self):
+        print (self.sound)
+
+bird1 = SongBird()
+bird1.sing()
+bird1.eat()
+
