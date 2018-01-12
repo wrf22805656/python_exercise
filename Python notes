@@ -1,0 +1,9 @@
+"""
+    Python is formally an interpreted language. Commands are executed through a piece of software known as Python interpreter. The
+    interpreter receives a command, evaluate that command, and reports the result of the command. The interpreter starts in interactive
+    mode with a clean workspace. Commands from a predefined script saved om a file (e.g., demo.py) are executed by invoking the
+    interpreter with the filename as an argument. 
+    
+"""
+    Many integrated development environments (IDEs) provide richer software development platforms for Python, including one named IDLE
+    that is included with the standard Python distribution. 
